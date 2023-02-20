@@ -1,0 +1,25 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: Password reset on localhost:8000
+From: webmaster@localhost
+To: hosakotivarun@gmail.com
+Date: Sat, 18 Feb 2023 15:56:35 -0000
+Message-ID: <167673579575.7416.17750416402543151593@Varun-Pc>
+
+
+You're receiving this email because you requested a password reset for your user account at localhost:8000.
+
+Please go to the following page and choose a new password:
+
+http://localhost:8000/accounts/reset/MQ/bju68b-eb0cde034766f12b645641dee17a724f/
+
+Your username, in case you’ve forgotten: varun
+
+Thanks for using our site!
+
+The localhost:8000 team
+
+
+
+-------------------------------------------------------------------------------

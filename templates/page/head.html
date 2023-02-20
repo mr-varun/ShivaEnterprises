@@ -1,0 +1,102 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ShivaEnterprises | Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="static/uploads/logo/icon.png" type="image/x-icon">
+    <link href="static/backend/themes/material_pink/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/backend/themes/material_pink/css/owl.carousel.css" rel="stylesheet">
+    <link href="static/backend/themes/material_pink/css/font-awesome.min.css" rel="stylesheet">
+    <link href="static/backend/themes/material_pink/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="backend/dist/css/ss-print.css">
+    <link rel="stylesheet" href="backend/themes/material_pink/datepicker/bootstrap-datepicker3.css" />
+    <script src="static/backend/dist/js/moment.min.js"></script>
+    <link rel="stylesheet" href="static/backend/dist/css/dropify.min.css">
+    <script src="static/backend/custom/jquery.min.js"></script>
+    <script src="static/backend/dist/js/dropify.min.js"></script>
+    <script type="text/javascript">
+        var base_url = "index.html";
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'GA_TRACKING_ID');
+    </script>
+    <a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
+    <script>
+        function setsitecookies() {
+            $.ajax({
+                type: "POST",
+                url: "https://demo.smart-school.in/welcome/setsitecookies",
+                data: {},
+                success: function (data) {
+                    $('.cookieConsent').hide();
+
+                }
+            });
+        }
+
+        function check_cookie_name(name) {
+            var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+            if (match) {
+                console.log(match[2]);
+                $('.cookieConsent').hide();
+            }
+            else {
+                $('.cookieConsent').show();
+            }
+        }
+        check_cookie_name('sitecookies');
+    </script>
+    <script src="static/backend/themes/material_pink/js/bootstrap.min.js"></script>
+    <script src="static/backend/themes/material_pink/js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="static/backend/themes/material_pink/js/jquery.waypoints.min.js"></script>
+    <script type="text/javascript" src="static/backend/themes/material_pink/js/jquery.counterup.min.js"></script>
+    <script src="static/backend/themes/material_pink/js/ss-lightbox.js"></script>
+    <script src="static/backend/themes/material_pink/js/custom.js"></script>
+    <!-- Include Date Range Picker -->
+    <script type="text/javascript"
+        src="static/backend/themes/material_pink/datepicker/bootstrap-datepicker.min.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            jQuery('img.html').each(function () {
+                var $img = jQuery(this);
+                var imgID = $img.attr('id');
+                var imgClass = $img.attr('class');
+                var imgURL = $img.attr('src');
+
+                jQuery.get(imgURL, function (data) {
+                    // Get the SVG tag, ignore the rest
+                    var $svg = jQuery(data).find('svg');
+
+                    // Add replaced image's ID to the new SVG
+                    if (typeof imgID !== 'undefined') {
+                        $svg = $svg.attr('id', imgID);
+                    }
+                    // Add replaced image's classes to the new SVG
+                    if (typeof imgClass !== 'undefined') {
+                        $svg = $svg.attr('class', imgClass + ' replaced-svg');
+                    }
+
+                    // Remove any invalid XML tags as per http://validator.w3.org
+                    $svg = $svg.removeAttr('xmlns:a');
+
+                    // Check if the viewport is set, else we gonna set it if we can.
+                    if (!$svg.attr('viewBox') && $svg.attr('height') && $svg.attr('width')) {
+                        $svg.attr('viewBox', '0 0 ' + $svg.attr('height') + ' ' + $svg.attr('width'))
+                    }
+
+                    // Replace image with new SVG
+                    $img.replaceWith($svg);
+
+                }, 'xml');
+
+            });
+        });
+
+    </script>
+</head>
