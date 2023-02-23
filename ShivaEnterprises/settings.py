@@ -16,12 +16,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-#login and logout rediretion
-
-# LOGIN_REDIRECT_URL = 'login'
-# LOGIN_REDIRECT_URL = '/admin'
-LOGOUT_REDIRECT_URL = 'login'
-
 EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
 EMAIL_FILE_PATH = BASE_DIR / 'emails'
 
@@ -37,6 +31,9 @@ INSTALLED_APPS = [
     'django_otp', #add
     'django_otp.plugins.otp_totp', #add
     'Frontend',
+    'Profile',
+    'django_browser_reload',#browser reload
+
 ]
 
 MIDDLEWARE = [
@@ -48,6 +45,8 @@ MIDDLEWARE = [
     'django_otp.middleware.OTPMiddleware', #add
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "django_browser_reload.middleware.BrowserReloadMiddleware",#autoreload
+
 ]
 
 ROOT_URLCONF = 'ShivaEnterprises.urls'
@@ -55,7 +54,7 @@ ROOT_URLCONF = 'ShivaEnterprises.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,"templates")],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

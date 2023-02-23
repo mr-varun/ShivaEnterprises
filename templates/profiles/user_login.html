@@ -52,14 +52,14 @@
                             <div class="loginbg loginradius login390">
                                 <div class="form-top">
                                     <div class="form-top-left logowidth">
-                                        <a href="/index">
+                                        <a href="/">
                                             <img src="../../static/uploads/logo/aa.png" />
                                         </a>
                                     </div>
                                 </div>
                                 <div class="form-bottom">
-                                    <h3 class="font-white">Admin Login</h3>
-                                    <form action="/admin/login/?next=/admin/" method="post">
+                                    <h3 class="font-white">User Login</h3>
+                                    <form action="" method="post">
                                         {% csrf_token %}
                                         <div class="form-group has-feedback">
                                             <input type="text" name="username" placeholder="Username"
@@ -75,21 +75,15 @@
                                             <span class="fa fa-lock form-control-feedback"></span>
                                             <span class="text-danger"></span>
                                         </div>
-                                        <div class="form-group has-feedback">
-                                            <input type="text" name="otp_token" id="id_otp_token" placeholder="Otp"
-                                                class="form-password form-control" required>
-                                            <span class="fa fa-key form-control-feedback"></span>
-                                            <span class="text-danger"></span>
-                                        </div>
                                         <button type="submit" class="btn">Sign In</button>
                                     </form>
 
                                     <div class="btn-group btn-group-justified" style="margin-top:10px;">
-                                        <a href="#" class="btn btn-primary width50" onclick="copy('varun', '1234')"
+                                        <a href="#" class="btn btn-primary width50" onclick="copy('Rahul', 'User@123')"
                                             data-toggle="tooltip" data-placement="top" title=""
                                             data-original-title="copy" style="background:#0084B4;">
-                                            <i class="fa fa-user ispace"></i> Admin</a>
-                                        <a href="#" class="btn btn-primary width50" onclick="copy('usr2', 'pswd2')"
+                                            <i class="fa fa-users ispace"></i> User 1</a>
+                                        <a href="#" class="btn btn-primary width50" onclick="copy('Rajat', 'User@1234')"
                                             data-toggle="tooltip" data-placement="top" title=""
                                             data-original-title="copy" style="background:#e91e63;">
                                             <i class="fa fa-users ispace"></i> User 2</a>
@@ -102,10 +96,10 @@
                                     </span>
 
                                     <p style="margin-top: 10px;">
-                                        <a href="/accounts/login/" class="forgot pull-right">
+                                        <a href="/register/" class="forgot pull-right">
                                             <i class="fa fa-user"></i> Sign Up</a>
-                                        <a style="padding-right: 20px;" href="/index" class="forgot pull-right">
-                                            <i class="fa fa-empire"></i> Front Site</a>
+                                        <a style="padding-right: 20px;" href="/alogin/" class="forgot pull-right">
+                                            <i class="fa fa-user"></i> Admin Login</a>
                                     </p>
                                     <p>
                                         <a href="/accounts/password_reset/" class="forgot">

@@ -1,12 +1,13 @@
 from django.contrib import admin
 from django.urls import path, include
-from Frontend import views
+from . import views
 
 urlpatterns = [
     path('', views.index, name="index"), #index
     path('index', views.index, name="index"), #index
     path('header', views.header, name="header"), #header
     path('footer', views.footer, name="footer"), #footer
+    path('contactus', views.contactus, name="contactus"), #contactus forn
 
 
 
