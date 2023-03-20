@@ -12,5 +12,3 @@ def header(request):
 def footer(request):
     return render(request, "page/footer.html")
 
-def contactus(request):
-    return render(request, "page/contact-us.html")

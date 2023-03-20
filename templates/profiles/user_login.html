@@ -36,11 +36,7 @@
     </style>
 </head>
 
-{% if request.user.is_authenticated %}
-<p>You're logged in!</p>
 
-<a href="{% url 'logout' %}">Log out</a>
-{% else %}
 
 <body>
     <div class="top-content">
@@ -57,6 +53,24 @@
                                         </a>
                                     </div>
                                 </div>
+                                {% if messages %}
+                                <div class="notification-container">
+                                    <div class="notification">
+                                        {% for message in messages %}
+                                        <p {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}
+                                        </p>
+                                        {% endfor %}
+                                        <img id='cross' src="../static/images/close.png" width="15px" height="15px"
+                                            alt="">
+                                    </div>
+                                </div>
+                                <script>
+                                    var cross = document.getElementById('cross')
+                                    cross.addEventListener('click', () => {
+                                        document.getElementsByClassName('notification-container')[0].style.display = 'none';
+                                    })
+                                </script>
+                                {% endif %}
                                 <div class="form-bottom">
                                     <h3 class="font-white">User Login</h3>
                                     <form action="" method="post">
@@ -78,22 +92,29 @@
                                         <button type="submit" class="btn">Sign In</button>
                                     </form>
 
+                                    <span
+                                        style="text-align:left; font-weight:normal; font-size: 12px; display: block;padding-top: 5px">
+                                        *More Signin option: Select any one of Social Accounts.
+                                    </span>
+
                                     <div class="btn-group btn-group-justified" style="margin-top:10px;">
-                                        <a href="#" class="btn btn-primary width50" onclick="copy('Rahul', 'User@123')"
+                                        <a href="/accounts/google/login/?process=login" class="btn btn-primary width50"
                                             data-toggle="tooltip" data-placement="top" title=""
-                                            data-original-title="copy" style="background:#0084B4;">
-                                            <i class="fa fa-users ispace"></i> User 1</a>
-                                        <a href="#" class="btn btn-primary width50" onclick="copy('Rajat', 'User@1234')"
-                                            data-toggle="tooltip" data-placement="top" title=""
-                                            data-original-title="copy" style="background:#e91e63;">
-                                            <i class="fa fa-users ispace"></i> User 2</a>
+                                            data-original-title="copy" style="background:#6b74ee;">
+                                            <i class="fa fa-google ispace"></i> Google </a>
+                                        <a href="/accounts/github/login/?process=login" class="btn btn-primary width50"
+                                            onclick="copy('Rajat', 'User@1234')" data-toggle="tooltip"
+                                            data-placement="top" title="" data-original-title="copy"
+                                            style="background:#050505;">
+                                            <i class="fa fa-github ispace"></i> Github </a>
 
                                     </div>
+                                    <label for="id_remember"
+                                        style="text-align:left; font-weight:normal; font-size: 14px; display: inline-block;padding-top: 5px">Remember
+                                        Me:</label>
+                                    <input type="checkbox" name="remember" id="id_remember">
 
-                                    <span
-                                        style="text-align:center;font-weight:normal; font-size: 14px; display: block;padding-top: 5px">
-                                        *Note: Select any one of user from mentioned above.
-                                    </span>
+
 
                                     <p style="margin-top: 10px;">
                                         <a href="/register/" class="forgot pull-right">
@@ -104,7 +125,7 @@
                                     <p>
                                         <a href="/accounts/password_reset/" class="forgot">
                                             <i class="fa fa-key"></i> Forgot Password</a>
-                                        </p>
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -120,7 +141,5 @@
         }
     </script>
 </body>
-{% endif %}
-
 
 </html>

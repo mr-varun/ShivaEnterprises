@@ -7,7 +7,6 @@ urlpatterns = [
     path('index', views.index, name="index"), #index
     path('header', views.header, name="header"), #header
     path('footer', views.footer, name="footer"), #footer
-    path('contactus', views.contactus, name="contactus"), #contactus forn
 
 
 

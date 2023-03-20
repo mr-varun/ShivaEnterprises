@@ -45,22 +45,7 @@
             </a>
         </nav>
     </header>
-    {% if messages %}
-    <div class="notification-container">
-        <div class="notification">
-            {% for message in messages %}
-            <p {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</p>
-            {% endfor %}
-            <img id='cross' src="../static/profile/images/close.png" width="15px" height="15px" alt="">
-        </div>
-    </div>
-    <script>
-        var cross = document.getElementById('cross')
-        cross.addEventListener('click', () => {
-            document.getElementsByClassName('notification-container')[0].style.display = 'none';
-        })
-    </script>
-    {% endif %}
+    
 
     <main class="main-container">
         <form class='container' action="" method="POST" enctype="multipart/form-data">

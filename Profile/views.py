@@ -22,7 +22,6 @@ def profile(request):
             form.save()
             username = request.user.username
             messages.success(request, f'{username}, Your profile is updated.')
-        pass
     else:
         form = ProfileForm(instance = request.user.profile)
     context = {'form':form}

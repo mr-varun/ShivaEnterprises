@@ -58,14 +58,14 @@
                                         <div class="form-group has-feedback">
                                             {{form.username.errors}}
                                             <input type="text" name="username" placeholder="Full Name" class="form-username form-control" autofocus autocapitalize="none" autocomplete="username" maxlength="150" required id="id_username">
-                                            <span class="fa fa-envelope form-control-feedback"></span>
+                                            <span class="fa fa-user form-control-feedback"></span>
                                             <span class="text-danger"></span>
                                         </div>
                                         <div class="form-group has-feedback">
                                             {{form.email.errors}}
                                             <input type="text" name="email" placeholder="E-mail"
                                                 class="form-username form-control" autofocus autocapitalize="none"
-                                                autocomplete="username" maxlength="150" required id="id_email">
+                                                autocomplete="username" maxlength="150" id="id_email">
                                             <span class="fa fa-envelope form-control-feedback"></span>
                                             <span class="text-danger"></span>
                                         </div>
@@ -86,11 +86,6 @@
                                         </div>
                                         <button type="submit" class="btn">Sign Up</button>
                                     </form>
-
-                                    <span
-                                        style="text-align:center;font-weight:normal; font-size: 14px; display: block;padding-top: 5px">
-                                        *Note: Select any one of user from mentioned above.
-                                    </span>
 
                                     <p style="margin-top: 10px;">
                                         <a href="/" class="forgot pull-left">

@@ -1,0 +1,55 @@
+<div id="myModal">
+    <div class="modal-top">
+        <button id="closeBtn">X</button>
+    </div>
+    <div class="modal-content">
+        <img src="https://via.placeholder.com/600x300" alt="modal-image">
+    </div>
+    <div class="modal-bottom">
+        <a href="https://insidethediv.com/" id="startNowBtn">Start Now</a>
+    </div>
+</div>
+<style>
+    #myModal {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+    }
+</style>
+<!-- <script>
+    function showModal() {
+        $("#myModal").show()
+    }
+    setTimeout(showModal, 1000);
+    $("#closeBtn").click(function(){
+		$("#myModal").hide()
+    })
+    var is_modal_show = sessionStorage.getItem('alreadyShow');
+    if (is_modal_show != 'alredy shown') {
+        $("#myModal").show()
+        sessionStorage.setItem('alreadyShow', 'alredy shown');
+    }
+    
+</script> -->
+
+<script>
+    $(document).ready(function () {
+        // show automatically after 1s
+        setTimeout(showModal, 1000);
+        $("#closeBtn").click(function () {
+            $("#myModal").hide()
+        })
+        function showModal() {
+            // get value from localStorage
+            var is_modal_show = sessionStorage.getItem('alreadyShow');
+            if (is_modal_show != 'alredy shown') {
+                $("#myModal").show()
+                sessionStorage.setItem('alreadyShow', 'alredy shown');
+            } else {
+                console.log(is_modal_show);
+            }
+        }
+    })
+</script>

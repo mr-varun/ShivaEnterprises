@@ -1,0 +1,7 @@
+django-admin
+django_browser_reload
+django-allauth
+django-crispy-forms
+django_otp
+Pillow
+
